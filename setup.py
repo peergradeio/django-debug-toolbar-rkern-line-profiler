@@ -12,5 +12,5 @@ setup(
     license="MIT",
     packages=find_packages(exclude=("tests", "example")),
     include_package_data=True,
-    install_requires=["django-debug-toolbar>=1.0", "line-profiler>=2.0"],
+    install_requires=["django-debug-toolbar>=1.,<2", "line-profiler>=2.0"],
 )
