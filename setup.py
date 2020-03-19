@@ -4,7 +4,7 @@ from setuptools import setup, find_packages
 setup(
     name="django-debug-toolbar-rkern-line-profiler",
     description="Django Debug Toolbar Line Profile Panel (rkern)",
-    version="0.0.1",
+    version="2.0.0",
     url="https://github.com/peergradeio/django-debug-toolbar-rkern-line-profiler",
     author="Malthe Jørgensen",
     author_email="malthe.jorgensen@gmail.com",
@@ -12,5 +12,5 @@ setup(
     license="MIT",
     packages=find_packages(exclude=("tests", "example")),
     include_package_data=True,
-    install_requires=["django-debug-toolbar>=1.,<2", "line-profiler>=2.0"],
+    install_requires=["django-debug-toolbar>=2.0,<3.0", "line-profiler>=2.0"],
 )

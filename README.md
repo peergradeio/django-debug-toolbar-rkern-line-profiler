@@ -12,6 +12,12 @@ the decorator `@line_profile`.
 This makes it easy to line profile functions that are nested deeply in your
 codebase. 
 
+Compatibility
+-------------
+
+* Versions 2.* are compatible with Django Debug Toolbar v2.*
+* Versions 1.* are compatible with Django Debug Toolbar v1.*
+
 Installation
 ------------
 

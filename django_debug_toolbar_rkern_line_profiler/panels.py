@@ -74,7 +74,7 @@ class LineProfilerPanel(Panel):
         total_time = sum(r['total_time'] for r in stats)
         return "Time spent in functions %.2fms" % total_time
 
-    def process_request(self, request):
+    def enable_instrumentation(self):
         self.profiler = line_profiler.LineProfiler()
 
         for f in functions_to_profile:
@@ -82,13 +82,11 @@ class LineProfilerPanel(Panel):
 
         self.stats = None
 
-    def process_view(self, request, view_func, view_args, view_kwargs):
-        return self.profiler.runcall(view_func, request, *view_args, **view_kwargs)
+    def process_request(self, request):
+        return self.profiler.runcall(super().process_request, request)
 
-    def process_response(self, request, response):
+    def disable_instrumentation(self):
         self.stats = self.profiler.get_stats()
 
         processed_line_stats = process_line_stats(self.stats)
         self.record_stats({"stats": processed_line_stats})
-
-        return response
